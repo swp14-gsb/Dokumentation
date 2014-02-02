@@ -1,0 +1,107 @@
+%%%%%%%%%%%%%%
+% 1-2 Seiten        %
+%%%%%%%%%%%%%%
+
+\def\verantwortlicher{Lukas Eipert} % Dokumentverantwortlicher in Kopfzeile
+\thispagestyle{empty} 
+
+%%% Titelseite A
+\vspace*{2\baselineskip}
+
+\begin{center}
+\sffamily
+Universität Leipzig\\
+Softwaretechnik-Praktikum\\
+Sommersemester 2014
+\vskip3\baselineskip
+
+\bgroup
+\Huge\textbf{Vorprojekt}
+\egroup
+\vskip3\baselineskip
+
+\begin{tabular}{ll}
+Projekt & Graphical SPARQL Builder \\
+Gruppe & s14.swp.gsb \\
+Verantwortlich & \verantwortlicher\\
+Erstellt am & \today \\
+\end{tabular}
+\end{center}
+
+\vfill%\vskip5\baselineskip
+
+\tableofcontents
+%%% Titelseite E
+
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Arbeitspaket Vorprojekt}
+
+Das Vorprojekt besteht aus zwei Aufgabenteilen.
+
+\subsection*{/M1/001 Entwicklung eines graphischen Modells für SPARQL-Anfragen}
+Der Erste Teil besteht aus der Entwicklung eines Konzeptes, durch
+welches man SPARQL-Anfragen graphisch umsetzen kann. Dafür sollen
+mehrere verschiedene graphische Modelle entworfen werden und
+verschiedenste SPARQL-Anfragen zusammengetragen werden. Dann wird
+überprüft, ob und wie sich welche SPARQL-Anfragen in dem jeweiligen
+graphischen Modell umsetzen lassen. Genauso ist der Aufwand der
+technischen Implementierung jedes Modells zu überprüfen. Die
+verschiedenen Modelle sollen dann nach folgenden Kriterien bewertet
+werden:
+\begin{itemize}
+\item Umsetzbarkeit der Komplexität von SPARQL
+  \begin{itemize}
+  \item Können alle vom Auftraggeber als wichtig erachteten Elemente
+    umgesetzt werden
+  \end{itemize}
+\item Komplexität/Intuitivität der Bedienung
+\item Technische Umsetzbarkeit
+\end{itemize}
+Somit soll das geeignetste Modell gefunden werden um SPARQL graphisch umzusetzen. 
+\subsection*{/M1/002 Beispielhafte Umsetzung ausgewählter SPARQL-Anfragen mit AngularJS}
+Der zweite Teil besteht aus einer Beispielimplementierung, die eine graphische Konstruktion ausgewählter SPARQL-Anfragen an Dummy-Daten ermöglicht.
+Dabei wird noch nicht Wert auf die technische Anbindung an einen bestimmten SPARQL-Endpoint gelegt, sondern nur darauf zu zeigen, dass das Modell den Anforderungen des Graphical SPARQL-Builder gerecht wird.
+Dieser Prototyp wird mit Hilfe des AngularJS Frameworks umgesetzt. 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Begründung der Wahl des Vorprojekts}
+
+Da für alle Teammitglieder sowohl SPARQL als auch Webentwicklung (insbesondere mit dem Framework AngularJS) größtenteils Neuland ist, bietet das Vorprojekt die Möglichkeit sich in diese Technologien einzuarbeiten.
+
+Beide Aufgabenteile /M1/001 und /M1/002 bilden die Grundlage für das gesamte Projekt.
+Im ersten Teil /M1/001 lernen die Teammitglieder SPARQL näher kennen und machen sich Gedanken über die Visualisierbarkeit der Anfragesprache. Die Entwicklung des graphischen Modells ist dahingehend notwendig, dass ohne ein geeignetes Modell der Graphical SPARQL-Builder nicht umgesetzt werden kann.
+
+Im zweiten Teil /M1/002 kommen die Teammitglieder mit AngularJS zum ersten Mal in Berührung und können sich mit dem Framework vertraut machen.
+Es kann sowohl festgestellt werden, ob AngularJS das richtige Framework für den GSB ist, als auch ob die technische Umsetzbarkeit und Bedienbarkeit des Modells aus /M1/001 richtig bestimmt wurden.
+Eventuelle Probleme werden so frühzeitig erkannt und können behoben werden.
+
+Falls in /M1/001 mehrere vermeintlich gleichgeeignete Modelle gefunden werden, könnte man diese alle in /M1/002 umsetzen. Das würde während der Implementierung zeigen, welches Modell am einfachsten umzusetzen ist. Fertige Implementierungen könnten dann durch Probanden nach ihrer Bedienbarkeit bewertet werden. Voraussetzung ist, dass der Workload dieser Implementierungen für die Gruppe zu bewältigen ist. Vorteilhaft wären verschiedene Modellumsetzungen im Qualitätstest, da die Probanden Vergleiche zu anderen Modellen praktisch vollziehen können und die Auswahl des finalen Modells so vermutlich einfacher wird.
+
+Der am Ende von /M1/002 entstandene Entwurf wird dem Kunden dann präsentiert. Dadurch werden Diskrepanzen im Modell erkannt und können beseitigt werden. 
+
+AngularJS wurde als Framework gewählt, da es
+\begin{itemize}
+\item ein Open-Source-JavaScript-Framework ist \cite{[1]},
+\item das MVC-Modell unterstützt \cite{[2]},
+\item für browserbasierte Single-Page-Anwendungen geeignet ist \cite{[2]},
+\item Unterstützung für Komponententests bietet \cite{[2]},
+\item mit vielen Browsern kompatibel [Internet Explorer ab Version 8] \cite{[1]},
+\item viele Module zur Erweiterung bereits existieren  \cite{[3]} und
+\item Online-Tutorials zur Einarbeitung existieren \cite{[4]}.
+\end{itemize}
+
+
+\begin{thebibliography}{99}
+\bibitem{[1]} \url{http://docs.angularjs.org/misc/faq}
+\bibitem{[2]} \url{https://de.wikipedia.org/wiki/AngularJS}
+\bibitem{[3]} \url{http://ngmodules.org/}
+\bibitem{[4]} \url{http://docs.angularjs.org/tutorial}, \url{https://egghead.io/}
+\end{thebibliography}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "main"
+%%% End: 

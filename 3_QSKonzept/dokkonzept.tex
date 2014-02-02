@@ -1,0 +1,144 @@
+
+\section{Dokumentationskonzept}
+
+\subsection{Interne Dokumentation}
+
+\subsubsection{Sprache}
+
+Bezeichner und Kommentare sind auf Englisch zu verfassen.
+Umlaute und Eszett sind im Quelltext zu vermeiden.
+
+\subsubsection{Coding Standard}
+
+Das Projekt folgt den Google Style Guides für JavaScript
+(\url{http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml})
+und HTML (\url{http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml}).
+
+Darüber hinausgehende Konventionen, sowie ausgewählter der sich daraus ergebenden Quelltextkonventionen sind im Folgenden aufgeführt.
+
+\paragraph{Einrückung (JavaScript, HTML)}
+
+Eine Einrückungsebene wird durch zwei Leerzeichen ausgezeichnet.
+Tabulatoren werden nicht zur Einrückung verwendet.
+
+\paragraph{Sprechende Variablennamen (JavaScript)}
+
+Der Name eine Variable soll ihren Verwendungszweck erkennen lassen.
+
+\paragraph{Variablendeklaration (JavaScript)}
+
+Variablen werden zu Beginn ihres Gültigkeitsraums deklariert,
+z.\,B. am Beginn einer Funktion.
+
+\paragraph{Geschweifte Klammern öffnen auf gleicher Zeile (JavaScript)}
+
+Gruppierungen durch geschweifte Klammern werden auf der Zeile
+geöffnet, auf der die Art der Gruppe definiert wird.
+Z.\,B.
+
+if (something) {
+  // ...
+} else {
+  // ...
+}
+
+an Stelle von
+
+if (something) 
+{
+  // ...
+} else 
+{
+  // ...
+}
+
+\paragraph{Bezeichner (JavaScript)}
+
+Funktionen und Variablen beginnen mit Kleinbuchstaben.
+Klassennamen beginnen mit Großbuchstaben.
+Die Trennung von Worten erfolgt durch Binnenmajuskel (auch als camel
+case bezeichnet).
+Konstante Variablen werden komplett mit Großbuchstaben getrennt durch
+Unterstrich benannt.
+Optionale Funktionsargumente beginnen mit ``opt\_''.
+
+Beispiele:
+\begin{itemize}
+\item functionNamesLikeThis
+\item variableNamesLikeThis
+\item ClassNamesLikeThis
+\item EnumNamesLikeThis
+\item methodNamesLikeThis
+\item CONSTANT\_VALUES\_LIKE\_THIS
+\item foo.namespaceNamesLikeThis.bar
+\item filenameslikethis.js
+\end{itemize}
+
+\paragraph{Funktions- und Klassenlänge (JavaScript)}
+
+Die Länge einer einzelnen Funktion ist auf 15 Zeilen beschränkt, die
+einer Klasse auf 120.
+
+\paragraph{Apostroph gegenüber Anführungszeichen bevorzugen}
+
+Soweit möglich wird ' bevorzugt gegenüber " verwendet.
+
+\paragraph{Nur Kleinbuchstaben (HTML)}
+
+Der gesamte Quelltext ist in Kleinbuchstaben zu verfassen.
+Ausgenommen sind lediglich Kommentare und String-Attribut-Werte.
+
+\subsubsection{Dokumentationsgenerator}
+
+Zum generieren der Quelltext-Dokumentation für JavaScript wird der
+Dokumentations-Prozessor JSDoc3 verwendet
+(\url{https://github.com/jsdoc3/jsdoc}).
+JSDoc bezeichnet nicht nur die Software zum generieren der
+Dokumentation sondern auch die gleichnamige Metasprache zum
+Kommentieren von JavaScript.
+Da der in diesem Projekt verwendete Google JavaScript Style Guide die
+Verwendung von JSDoc vorschreibt liegt die Dokumentations-Gernerierung
+mittels JSDoc3 nahe.
+
+\subsubsection{Qualitätssicherung}
+
+Als Werkzeug zur Qualitätssicherung kommt JSLint zum Einsatz.
+JSLint überprüft JavaScript-Quelltext auf syntaktische Fehler und
+stilistische Schwächen und ist sowohl als Online-Tool
+(\url{http://www.jslint.com}) als auch als Kommandozeilen-Tool
+verfügbar (\url{http://www.jshint.com/install/}).
+JSLint bitetet eine Reihe von einstellabren Optionen, beispielsweise
+zur Festlegung der gewünschten Einrückung und soll als Hilfsmittel
+verstanden werden, die selbst auferlegten Quelltextkonventionen einzuhalten.
+
+\subsection{Produktions-Dokumentation}
+
+Die Arbeit am Projekt wird sowohl durch die wöchentliche
+Aufwandserfassung als auch durch die Verwendung des
+Versionskontrollsystems Git dokumentiert.
+
+\subsection{Entwurfs-Dokumentation}
+
+Die Entwurfs-Dokumentation dient sowohl den Projektteilnehmern zum
+Festhalten getroffener Struktur- und Design-Entscheidungen als auch
+Aussenstehenden als Einführung in das Projekt.
+Die Entwurfs-Dokumentation ist auch als Technische Dokumentation der
+grundlegenden Systemarchitektur zu verstehen.
+
+Sie umfasst eine Beschreibung der Zielstellung und Motivation des
+Projekts.
+Sie beschreibt den äußerlichen Funktionsumfang des Systems, also die
+Perspektive des Anwenders.
+Weiter werden die angewendeten Struktur- und Entwurfsprinzipien,
+sowohl des Gesamtsystems als auch von Teilsystemen, beschrieben,
+erläutert und begründet. Dies dient als Einstiegshilfe in das
+Softwaresystem, bevor sich den Details der Umsetzung zugewendet wird.
+Ebenfalls dokumentiert wird das Datenmodell und das Testkonzept der
+Software.
+Ein Glossar ist ebenfalls Bestandteil der Entwurfsdokumentation.
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "main"
+%%% End: 

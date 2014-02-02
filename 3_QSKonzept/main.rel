@@ -1,0 +1,54 @@
+;; RefTeX parse info file
+;; File: /Users/mbp/Dropbox/Bachelor Informatik/3. Semester/softwaretechnik/praktikum/Blatt3/QSKonzept/main.tex
+;; User: mbp (Mein Name)
+
+(set reftex-docstruct-symbol '(
+
+
+(xr nil "\\\\\\\\\\\\")
+
+(index-tags)
+
+(is-multi t)
+
+(bibview-cache)
+
+(master-dir . "/Users/mbp/Dropbox/Bachelor Informatik/3. Semester/softwaretechnik/praktikum/Blatt3/QSKonzept/")
+
+(label-numbers)
+
+(bof "/Users/mbp/Dropbox/Bachelor Informatik/3. Semester/softwaretechnik/praktikum/Blatt3/QSKonzept/main.tex")
+
+(bof "/Users/mbp/Dropbox/Bachelor Informatik/3. Semester/softwaretechnik/praktikum/Blatt3/QSKonzept/dokkonzept.tex")
+
+(toc "toc" "    1 Dokumentationskonzept" "/Users/mbp/Dropbox/Bachelor Informatik/3. Semester/softwaretechnik/praktikum/Blatt3/QSKonzept/dokkonzept.tex" nil 2 "1" "\\section{Dokumentationskonzept}" 2)
+
+(toc "toc" "      1.1 Interne Dokumentation" "/Users/mbp/Dropbox/Bachelor Informatik/3. Semester/softwaretechnik/praktikum/Blatt3/QSKonzept/dokkonzept.tex" nil 3 "1.1" "\\subsection{Interne Dokumentation}" 35)
+
+(toc "toc" "        1.1.1 Sprache" "/Users/mbp/Dropbox/Bachelor Informatik/3. Semester/softwaretechnik/praktikum/Blatt3/QSKonzept/dokkonzept.tex" nil 4 "1.1.1" "\\subsubsection{Sprache}" 71)
+
+(toc "toc" "        1.1.2 Coding Standard" "/Users/mbp/Dropbox/Bachelor Informatik/3. Semester/softwaretechnik/praktikum/Blatt3/QSKonzept/dokkonzept.tex" nil 4 "1.1.2" "\\subsubsection{Coding Standard}" 206)
+
+(toc "toc" "          1.1.2.1 Einrückung" "/Users/mbp/Dropbox/Bachelor Informatik/3. Semester/softwaretechnik/praktikum/Blatt3/QSKonzept/dokkonzept.tex" nil 5 "1.1.2.1" "\\paragraph{Einrückung}" 598)
+
+(toc "toc" "          1.1.2.2 Sprechende Variablennamen" "/Users/mbp/Dropbox/Bachelor Informatik/3. Semester/softwaretechnik/praktikum/Blatt3/QSKonzept/dokkonzept.tex" nil 5 "1.1.2.2" "\\paragraph{Sprechende Variablennamen}" 758)
+
+(toc "toc" "          1.1.2.3 Variablendeklaration" "/Users/mbp/Dropbox/Bachelor Informatik/3. Semester/softwaretechnik/praktikum/Blatt3/QSKonzept/dokkonzept.tex" nil 5 "1.1.2.3" "\\paragraph{Variablendeklaration}" 879)
+
+(toc "toc" "          1.1.2.4 Geschweifte Klammern öffnen auf gleicher Zeile" "/Users/mbp/Dropbox/Bachelor Informatik/3. Semester/softwaretechnik/praktikum/Blatt3/QSKonzept/dokkonzept.tex" nil 5 "1.1.2.4" "\\paragraph{Geschweifte Klammern öffnen auf gleicher Zeile}" 1022)
+
+(toc "toc" "          1.1.2.5 Bezeichner" "/Users/mbp/Dropbox/Bachelor Informatik/3. Semester/softwaretechnik/praktikum/Blatt3/QSKonzept/dokkonzept.tex" nil 5 "1.1.2.5" "\\paragraph{Bezeichner}" 1329)
+
+(toc "toc" "        1.1.3 Dokumentationsgenerator" "/Users/mbp/Dropbox/Bachelor Informatik/3. Semester/softwaretechnik/praktikum/Blatt3/QSKonzept/dokkonzept.tex" nil 4 "1.1.3" "\\subsubsection{Dokumentationsgenerator}" 2020)
+
+(toc "toc" "        1.1.4 Qualitätssicherung" "/Users/mbp/Dropbox/Bachelor Informatik/3. Semester/softwaretechnik/praktikum/Blatt3/QSKonzept/dokkonzept.tex" nil 4 "1.1.4" "\\subsubsection{Qualitätssicherung}" 2898)
+
+(toc "toc" "      1.2 Produktions-Dokumentation" "/Users/mbp/Dropbox/Bachelor Informatik/3. Semester/softwaretechnik/praktikum/Blatt3/QSKonzept/dokkonzept.tex" nil 3 "1.2" "\\subsection{Produktions-Dokumentation}" 3443)
+
+(toc "toc" "      1.3 Entwurfs-Dokumentation" "/Users/mbp/Dropbox/Bachelor Informatik/3. Semester/softwaretechnik/praktikum/Blatt3/QSKonzept/dokkonzept.tex" nil 3 "1.3" "\\subsection{Entwurfs-Dokumentation}" 3635)
+
+(eof "/Users/mbp/Dropbox/Bachelor Informatik/3. Semester/softwaretechnik/praktikum/Blatt3/QSKonzept/dokkonzept.tex")
+
+(eof "/Users/mbp/Dropbox/Bachelor Informatik/3. Semester/softwaretechnik/praktikum/Blatt3/QSKonzept/main.tex")
+))
+
