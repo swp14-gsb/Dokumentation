@@ -26,8 +26,6 @@ Erstellt am & \today \\
 
 %\vfill%\vskip5\baselineskip
 
-\newpage
-
 \tableofcontents
 %%% Titelseite E
 
@@ -115,34 +113,34 @@ Ebenso gibt es eine Verbindung zur MockupData-Komponente, welche auf Anfrage der
 
 \section{Struktur- und Entwurfsprinzipien einzelner Pakete}
 
-\subsection{User Interface}
+\subsection*{User Interface}
 
 Beim Vorprojekt besteht das Userinterface aus dem Workspace, der die graphisch konstruierte Abfrage beinhaltet, dem Feld in dem nach dem Drücken des "Build Query"-Buttons die Übersetzung der Anfrage in JSON und in SPARQL zu sehen ist. Im Workspace befindet sich der Hinzufüge-Button für Subjekte sowie ein LIST ALL Objekt. Standardmäßig werden zu Beginn zwei Subjekte (Mensch \& Stadt) in den Workspace geladen. Subjekte und Properties sind durch Icons entfernbar sowie in der Abfrage anzeigbar.
 Ein Link über dem SPARQL-Result-Feld ermöglicht zusätzlich das Anzeigen des Ergebnisses der übersetzten Anfrage, welches zurückgegeben wird nachdem die Anfrage an einen DBpedia-Endpunkt (Virtuoso) geschickt wurde.
 
-\subsection{Workspace}
+\subsection*{Workspace}
 
 Der Workspace umfasst die Sammlung von Subjekten und den Startpunkt.
 
-\subsection{Subjects}
+\subsection*{Subjects}
 
 Subjects können durch die Icons entfernt (Papierkorb), in der Anfrage aus-/eingeblendet (Auge) und hinzugefügt (Plussymbol) werden.
 Subjects sind Instanzen die mit den jeweiligen "externen" Properties Verbindungen untereinander aufbauen und Subject-interne Properties sammeln. Sie bilden somit den grundsätzlichen
 Anhaltspunkt für die Übersetzung. (siehe Translator)
 
-\subsection{Properties}
+\subsection*{Properties}
 
 Properties können durch die Icons entfernt (Papierkorb), in der Anfrage aus-/eingeblendet (Auge) und hinzugefügt (Add-Button beim Subject-Mouseover) werden.
 Sie stellen über eine Auswahl im DropDown Menü eines Subjects Verbindungen zwischen Subjects her.
 
-\subsection{Translator}
+\subsection*{Translator}
 
 Die Translator-Funktion ist im Vorprojekt zweigeteilt. Eine Übersetzung liefert auf Basis der im Workspace zusammengestellten graphischen Anfrage (in GSBL) eine Abfrage im
 JSON-Format und eine weitere Übersetzung von JSON in SPARQL wird danach durchgeführt.
 Die Translation wird durch Klick auf den Button "Build Query" gestartet und das Ergebnis wird in den unteren Feldern (JSON- \& SPARQL-Resultat) angezeigt.
 Algorithmisch betrachtet beginnt die Übersetzung bei dem mit dem Startpunkt verknüpften Subject und übersetzt dann rekursiv alle damit verknüpften Subjects und deren Properties, sodass nicht verknüpfte Subjects ignoriert werden. 
 
-\subsection{MockupData}
+\subsection*{MockupData}
 
 Die Mockup Daten liegen im JSON-Format vor und umfassen die sechs Subjects "Firma", "Universität", "Person", "Stadt", "Land" und "Studiengang" sowie deren Beziehungen untereinander.
 Im Vorprojekt ist in der Übersetzung bereits eine Verknüpfung zwischen den Mockup Subejcts und den Subjekten der DBpedia Ontologie realisiert um eine Eindruck der erstellten Abfrage und des Resultats zu ermöglichen. (siehe UI)
@@ -151,19 +149,19 @@ Im Vorprojekt ist in der Übersetzung bereits eine Verknüpfung zwischen den Moc
 
 Die Grundbausteine des RDF-Datenmodells sind Ressourcen, Eigenschaften und Aussagen. Durch diese ist es möglich RDF Ausdrücke syntaxfrei darzustellen.
 
-\subsection{Ressource}
+\subsection*{Ressource}
 
 Eine Ressource wird mit RDF Ausdrücken beschrieben. Folglich muss diese durch eine URI (Universal Resource Identifier) referenzierbar sein und eindeutig von dieser identifiziert werden können.
 
-\subsection{Eigenschaft}
+\subsection*{Eigenschaft}
 
 Eigenschaften sind die Attribute von Ressourcen. Im Datenmodell legen sie die erlaubten Werte, den Typ und die Relation der Ressource zu anderen Ressourcen fest.
 
-\subsection{Aussage}
+\subsection*{Aussage}
 
 Eine Ressource, kombiniert mit ihrer Eigenschaft und den Wert, den die Eigenschaft dieser Ressource hat, nennt man "Aussage". D.h. eine Aussage besteht aus Subjekt-Prädikat-Objekt (Ressource-Eigenschaft-Wert).
 
-\subsection{Beispiel}
+\subsection*{Beispiel}
 
 \begin{tabular}{l l}
 Aussage  & Der Autor der Ressource ist Herbert Meier \\\midrule
@@ -254,7 +252,7 @@ Turtle (Terse RDF Triple Language) sowie RDF/XML. Turtle und N3 gelten im Vergle
 {Ein Triplestore ist ein System zur Speicherung, Verwaltung und Bearbeitung einer
  Sammlung von RDF-Tripeln. Ein Triplestore bietet gewöhnlich APIs,
  Rea\-so\-ning-Verfahren sowie Abfragemöglichkeiten. \cite{fraunhofer}}
-
+\newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{thebibliography}{99}
 \bibitem{dbpedia-wikipedia}
