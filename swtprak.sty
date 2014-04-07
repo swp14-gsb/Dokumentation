@@ -1,34 +1,5 @@
 \ProvidesPackage{../swtprak}
 
-% \renewcommand\section{%
-%   \suppressfloats[t]%
-%   \@startsection{section}{1}{\z@}%
-%   {15\p@}
-%   {8\p@}
-% %    {\ifx\thesection\theinchapsection-24\p@\else-26\p@\fi}%
-% %    {13\p@}%
-%     {\raggedright\sffamily\selectfont\bfseries\mathversion{bold}%
-%      \ifx\thesection\theinchapsection
-%        \large
-%      \else
-%        \Large\leavevmode\vrule\@width\z@\@height\dimexpr\topskip+6.5\p@\relax\@depth\z@
-%      \fi}
-% }
-
-% \renewcommand\subsection{%
-%   \@startsection{subsection}{2}{\z@}%
-%   {8\p@}
-%   {2\p@}
-% %    {\ifx\thesection\theinchapsection-26\p@\else-24\p@\fi}%
-% %    {13\p@\@plus\z@\@minus4\p@}%
-%     {\raggedright\sffamily\bfseries\mathversion{bold}%
-%      \ifx\thesection\theinchapsection
-%        \normalsize
-%      \else
-%        \large
-%      \fi}
-% }
-
 % Erstzeileneinzeug auf 0 setzen
 %\parindent0pt
 
@@ -40,6 +11,17 @@
 
 \usepackage{graphicx}
 \graphicspath{{./figures/}}
+
+%%%%%%%%%%%%
+% captions %
+%%%%%%%%%%%%
+\usepackage{caption}
+\captionsetup[figure]{
+  format = plain,
+  indention = 0pt,
+  justification=raggedright,
+  labelfont=bf,font=normalsize,font=sf
+}
 
 \usepackage{sidecap}
 
