@@ -129,14 +129,36 @@ Eine Ressource, kombiniert mit ihrer Eigenschaft und den Wert, den die Eigenscha
 
 \subsection*{Beispiel}
 
-\begin{tabular}{l l}
+\begin{center}
+\begin{tabular}{l l}\toprule
 Aussage  & Der Autor der Ressource ist Herbert Meier \\\midrule
 Subjekt  & \url{http://www.example.org/Herbert-Meier} \\
 Prädikat & Autor \\
-Objekt   & "Herbert Meier"
+Objekt   & "Herbert Meier" \\\bottomrule
 \end{tabular}
+\end{center}
 
 %<Untitled.png>
+
+\subsection*{Represäntation in JSON}
+
+Im GSB werden die Informationen der graphischen, zu einer Anfrage
+zusammengestellten Elemente zunächst innerhalb eines JSON-Objekts
+gespeichert.
+Dies soll einen Import/Export der gebauten Anfragen ermöglichen, und
+dient gleichzeitig als Eingabeparameter für den Übersetzer, welcher
+das JSON-Objekt schließlich in eine gültige SPARQL-Anfrage wandelt.
+Die Erstellung dieses Objekts wird dabei erheblich durch die objektorientierte Repräsentation der grafischen Elemente erleichtert.
+
+Im JSON-Objekt werden alle wichtigen Parameter einer Anfrage
+festgehalten:
+\begin{itemize}
+\item In einem START-Objekt werden zunächst Typ und Linkpartner des
+Startpunktes gespeichert. 
+\item Danach folgen in einem SUBJECTS-Array alle vorkommenden
+  Subjekte, mit wichtigen Variablen wie URI, Alias, Typ, etc. 
+\item Innerhalb eines Subjekts befindet sich schließlich das properties-Array, in dem alle für das Subjekt gewählten Eigenschaften, inklusive deren eigene Parameter (Alias, URI etc.), zu finden sind.
+\end{itemize}
 
 \section{Testkonzept}
 
@@ -171,19 +193,22 @@ haben und sich dadurch mit der Zielgruppe des Projekts decken.
 
 \section{Glossar}
 
-\newcommand{\begriff}[2]{
+\newcommand{\begriff}[2]{%
 \paragraph{#1}
-#2
+#2%
 }
 
 \begriff{API}
 {Application Programming Interface -- Programmierschnittstelle.
-Eine API be\hack{-\break}schreibt, wie Software-Komponenten bzw. Programme miteinander interagieren können/sollten. Anders ausgedrückt: eine API ist der Teil eines Softwaresystems, der anderen Programmen zur Verfügung gestellt wird um mit dem Softwaresystem zu interagieren.}
+Eine API be\hack{-\break}schreibt, wie Software-Komponenten
+bzw. Programme miteinander interagieren können/sollten. Anders
+ausgedrückt: eine API ist der Teil eines Softwaresystems, der anderen
+Programmen zur Verfügung gestellt wird um mit dem Softwaresystem zu
+interagieren.}
 
 \begriff{DBpedia}
 {DBpedia ist eine Datensammlung im RDF Format, deren Datensätze aus der Wikipedia extrahiert wurden. Ziel ist es strukturierte Daten für Webanwendungen zur Verfügung zu stellen.
-\cite{dbpedia-wikipedia,dbpedia,dbpedia-datasets}
-}
+\cite{dbpedia-wikipedia,dbpedia,dbpedia-datasets}}
 
 \begriff{Endpoint}
 {Ein Endpoint ist eine Schnittstelle zwischen der Datensammlung und der 

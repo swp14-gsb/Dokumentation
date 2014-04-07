@@ -26,6 +26,27 @@
 
 \usepackage{sidecap}
 
+%%%%%%%%%%%%
+% fancyvrb %
+%%%%%%%%%%%%
+\usepackage{color}
+\definecolor{codeLineNumberColor}{rgb}{.7,.7,1}
+\usepackage{fancyvrb}
+\DefineVerbatimEnvironment%
+{myVerbatim}{Verbatim}
+{numbers=left, numbersep=0.5em, frame=lines, framerule=.35mm 
+%,commandchars=\\\{\}
+}
+
+\renewcommand{\theFancyVerbLine}{
+%  \footnotesize
+  \tiny
+%  \textcolor{codeLineNumberColor}{\arabic{FancyVerbLine}}
+  %\textcolor{cyan}{
+    \arabic{FancyVerbLine}
+  %}
+}
+
 %%%%%%%%%%%%%%%%%
 % format-hilfen %
 %%%%%%%%%%%%%%%%%
