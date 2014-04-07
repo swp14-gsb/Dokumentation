@@ -18,12 +18,7 @@ und SPARQL lesbar sein.
 
 Abbildung~\ref{fig01} gibt eine Übersicht über die Eingliederung und Nutzung des Graphical SPARQL Builder beim Einsatz des Tools im Zusammenspiel mit beteiligten Personen und externen Softwarekomponenten:
 
-%\begin{figure}[tbp]%
-%\includegraphics[width=.7\hsize]{Produktuebersicht2.png}
-%\caption{Beziehung des GSB zu Anwender, Datenbank und Administration.}
-%\label{fig01}
-%\end{figure}
-\begin{SCfigure}[20][htbp]%
+\begin{SCfigure}[20][!b]%
 \includegraphics[width=.7\hsize]{Produktuebersicht2.png}
 \caption{Beziehung des GSB zu Anwender, Datenbank und Administration.}
 \label{fig01}
@@ -52,7 +47,7 @@ Die Grundsätzliche Struktur des GSB ist im Komponentendiagramm
 (s.~Abb.~\ref{fig02}) schematisch dargestellt.
 
 %\begin{SCfigure}[20][htbp]%
-\begin{figure}[tbp]%
+\begin{figure}[h]%
 \includegraphics[width=\hsize]{Komponentendiagramm.png}
 \caption{Komponentendiagramm des GSB.}
 \label{fig02}
@@ -74,7 +69,9 @@ Die Workspace-Komponente steht in Verbindung mit der
 Translator-Komponente, welche für die Übersetzung der erstellten
 Rohdaten zu JSON bzw. SPARQL zuständig ist und die Ergebnisse zurück
 zur Workspace-Komponente überträgt.
-Ebenso gibt es eine Verbindung zur MockupData-Komponente, welche auf Anfrage der Workspace-Komponente die verfügbaren Subjekte und deren Eigenschaften bereitstellt.
+Ebenso gibt es eine Verbindung zur MockupData-Komponente, welche auf
+Anfrage der Workspace-Komponente die verfügbaren Subjekte und deren
+Eigenschaften bereitstellt.
 
 
 \section{Struktur- und Entwurfsprinzipien einzelner Pakete}
@@ -100,7 +97,7 @@ Properties können durch die Icons entfernt (Papierkorb), in der Anfrage aus-/ei
 Sie stellen über eine Auswahl im DropDown Menü eines Subjects Verbindungen zwischen Subjects her.
 
 \subsection*{Translator}
-
+\Hack{\enlargethispage{\baselineskip}}
 Die Translator-Funktion ist im Vorprojekt zweigeteilt. Eine Übersetzung liefert auf Basis der im Workspace zusammengestellten graphischen Anfrage (in GSBL) eine Abfrage im
 JSON-Format und eine weitere Übersetzung von JSON in SPARQL wird danach durchgeführt.
 Die Translation wird durch Klick auf den Button "Build Query" gestartet und das Ergebnis wird in den unteren Feldern (JSON- \& SPARQL-Resultat) angezeigt.
@@ -128,8 +125,13 @@ Eigenschaften sind die Attribute von Ressourcen. Im Datenmodell legen sie die er
 Eine Ressource, kombiniert mit ihrer Eigenschaft und den Wert, den die Eigenschaft dieser Ressource hat, nennt man "Aussage". D.h. eine Aussage besteht aus Subjekt-Prädikat-Objekt (Ressource-Eigenschaft-Wert).
 
 \subsection*{Beispiel}
-
+\Hack{\enlargethispage{\baselineskip}}
+\begin{SCfigure}[20][htbp]%
+\includegraphics[width=.7\hsize]{datenmodell.png}
+\caption{Beispiel eines RDF Tripels.}\label{fig03}
+\end{SCfigure}
 \begin{center}
+
 \begin{tabular}{l l}\toprule
 Aussage  & Der Autor der Ressource ist Herbert Meier \\\midrule
 Subjekt  & \url{http://www.example.org/Herbert-Meier} \\
@@ -138,7 +140,7 @@ Objekt   & "Herbert Meier" \\\bottomrule
 \end{tabular}
 \end{center}
 
-%<Untitled.png>
+
 
 \subsection*{Represäntation in JSON}
 
@@ -159,6 +161,8 @@ Startpunktes gespeichert.
   Subjekte, mit wichtigen Variablen wie URI, Alias, Typ, etc. 
 \item Innerhalb eines Subjekts befindet sich schließlich das properties-Array, in dem alle für das Subjekt gewählten Eigenschaften, inklusive deren eigene Parameter (Alias, URI etc.), zu finden sind.
 \end{itemize}
+
+Die Vorlage für ein solches JSON-Objekt befindet sich in Anhang~\ref{json}.
 
 \section{Testkonzept}
 
@@ -196,6 +200,7 @@ haben und sich dadurch mit der Zielgruppe des Projekts decken.
 \newcommand{\begriff}[2]{%
 \paragraph{#1}
 #2%
+\vspace*{-.5\baselineskip}
 }
 
 \begriff{API}
