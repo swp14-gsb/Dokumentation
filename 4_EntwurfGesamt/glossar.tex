@@ -1,0 +1,53 @@
+\section{Glossar}
+
+\newcommand{\begriff}[2]{%
+\paragraph{#1}
+#2%
+\vspace*{-.5\baselineskip}
+}
+
+\begriff{API}
+{Application Programming Interface -- Programmierschnittstelle.
+Eine API be\hack{-\break}schreibt, wie Software-Komponenten
+bzw. Programme miteinander interagieren können/sollten. Anders
+ausgedrückt: eine API ist der Teil eines Softwaresystems, der anderen
+Programmen zur Verfügung gestellt wird um mit dem Softwaresystem zu
+interagieren.}
+
+\begriff{DBpedia}
+{DBpedia ist eine Datensammlung im RDF Format, deren Datensätze aus der Wikipedia extrahiert wurden. Ziel ist es strukturierte Daten für Webanwendungen zur Verfügung zu stellen.
+\cite{dbpedia-wikipedia,dbpedia,dbpedia-datasets}}
+
+\begriff{Endpoint}
+{Ein Endpoint ist eine Schnittstelle zwischen der Datensammlung und der 
+Abfragesprache. Nachdem eine Anfrage an den Endpoint gesendet wurde (query)  sendet selbiger die Ergebnisse zurück. Ein Beispiel für einen SPARQL-Endpoint ist der “Virtuoso SPARQL Query Editor”. \cite{dbpedia-sparql}}
+
+\begriff{GSB}
+{Graphical SPARQL Builder, der Name des Projekts. \cite{swp14-gsb}}
+
+\begriff{i18n} 
+{internationalization and localization -- Anpassung der Software an andere Sprachen und Kulturen ohne Quelltext zu ändern. Sprach- und Kulturspezifika werden über Konfigurationsdateien angepasst.}
+
+\begriff{Ontologie}
+{Ontologien sind formalisierte Vokabulare von Begriffen. Diese Vokabulare beziehen sich meist auf eine bestimmte Domäne (Gegenstandsbereich) oder Nutzergruppe. Sie liegen in einer sprachlichen Form vor und umfassen die Begriffe einer Domäne sowie Beziehungen zwischen den Begriffen. \cite{owl,ontologie-wiki,fraunhofer}
+}
+
+\begriff{OWL}
+{Die Web Ontology Language (OWL, aktuelle Version OWL2) ist eine Beschreibungssprache um Ontologien für das semantische Web zu erstellen und zu publizieren. OWL2-Ontologien können für Informationen verwendet werden, die in RDF geschrieben sind und werden hauptsächlich in Form von RDF-Dokumenten ausgetauscht.
+\cite{owl}
+}
+
+\begriff{RDF}
+{“Resource Description Framework” kurz RDF ist eine Strukturierung von Daten nach
+dem Muster Subjekt-Prädikat-Objekt. Alle RDF-Daten werden in diesem Tripel-Format 
+gespeichert. RDF gilt als eines der Basis-Elemente des semantischen Webs.
+Repräsentationen, also syntaktische Standards, des RDF-Prinzips sind N3 (Notation3), 
+Turtle (Terse RDF Triple Language) sowie RDF/XML. Turtle und N3 gelten im Vergleich zu RDF/XML als benutzerfreundlicher. \cite{rdf-primer,rdf-wiki,rdf-xml-wiki}}
+
+\begriff{SPARQL}
+{“SPARQL Protocol And RDF Query Language” kurz SPARQL ist eine Abfragesprache für das Datenformat RDF. SPARQL ist graphbasiert und gilt nach dem W3C als Standard für RDF-Abfragen. \cite{w3c-rdf-sparql-query,sparql-wiki}}
+
+\begriff{Triplestore}
+{Ein Triplestore ist ein System zur Speicherung, Verwaltung und Bearbeitung einer
+ Sammlung von RDF-Tripeln. Ein Triplestore bietet gewöhnlich APIs,
+ Rea\-so\-ning-Verfahren sowie Abfragemöglichkeiten. \cite{fraunhofer}}
