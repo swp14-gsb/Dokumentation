@@ -19,14 +19,16 @@ Bei der Entwicklung werden wir weiter HTML und JavaScript zusammen mit
 dem AngularJS-Framework benutzen.
 
 \section{Designübersicht und Funktionalität}
-Design
+
+\subsection*{Design}
+
 Das Design basiert abgesehen von den im Folgenden beschriebenen
 Abweichungen auf dem Design des Vorprojekts. Dieses kann in der
-\href{}{Onlineversion} des Vorprojekts betrachtet werden (\url{http://pcai042.informatik.uni-leipzig.de/~swp14-gsb/}).
+Onlineversion des Vorprojekts betrachtet werden (\url{http://pcai042.informatik.uni-leipzig.de/~swp14-gsb/}).
 Zusätzlich werden die Subject-Boxen durch Drag\,\&\,Drop verschiebbar sein. Verbindungen zwischen Subjects können wie im Vorprojekt durch Properties angegeben werden und werden im Hauptprojekt durch Linien zwischen den jeweiligen Subjects gekennzeichnet.
 Durch Buttons in einer ein- und ausblendbaren Leiste in den Subject-Boxen werden die Properties um arithmetische Operatoren (+, -, *, /, COUNT, MAX, MIN, SUM) erweitert.
 
-Funktionalität
+\subsection*{Funktionalität}
 Die Hauptfunktionalität des GSB liegt in der Generierung semantisch und syntaktisch korrekter SPARQL-Anfragen aus einer grafischen Repräsentation der Anfrage. Der User muss den grafischen Input leisten und erhält vom GSB dafür verschiedene Werkzeuge:
 Das Tool ist in der Lage aus RDF-basierten Datenbanken Klassen und ihre Eigenschaften herauszufiltern und sie dem User zur Verfügung zu stellen. Hierbei kann der User eine Volltextsuche auf den Daten nutzen. Der GSB stellt zudem eine Vielfalt an klickbaren Lösungen für Sprachelemente aus SPARQL und für Arbeitshilfen bereit. Exemplarisch dafür stehen folgende Funktionalitäten: Ergebnisspalten können zum Beispiel mit einem Augensymbol ein- und ausgeblendet werden. Zu jeder Klasse und jeder Eigenschaft kann außerdem ein Beschreibungstext über ein Informationssymbol angezeigt werden. Grafische Elemente können über ein intuitives Mülleimersymbol wieder gelöscht werden.
 Um ein langfristig produktives Arbeiten mit dem GSB zu gewährleisten, ist eine Speicherfunktion implementiert, mit welcher User ihre grafisch zusammengestellten Anfragen im JSON-Format abspeichern und später wieder im GSB laden können. 
@@ -36,31 +38,61 @@ in bestehende Websites eingegliedert werden kann.
 
 
 \section{Arbeitspakete und Meilensteine}
-4.1 Vorprojekt (30% des Gesamtprojekt)
-Muss-Ziele: 
-/M1/001 Entwicklung eines graphischen Modells für SPARQL-Anfragen
-/M1/002 Beispielhafte Umsetzung ausgewählter SPARQL-Anfragen mit AngularJS
-4.2 Graphische Umsetzung (40%)
-Muss-Ziele:
-/M2/001 Umsetzung notwendiger SPARQL-Anfragen
-Kann-Ziele:
-/K2/001 Umsetzung nicht geforderter SPARQL-Anfragen
-/K2/002 Modulare Entwicklung um Erweiterbarkeit sicherzustellen
-/K3/003 Speichern von Anfragen / Beispielanfragen
-/K3/004 i18n
-4.3 Endpoint-Anbindung (20%)
-Muss-Ziele:
-/M3/001 Anbindung über Konfigurationsdateien
-/M3/002 Beispielhafte Anbindung des GSB an dbpedia Endpoint 
-Kann-Ziele:
-/K3/001 Anbindung an mehrere Endpoints
-/K3/002 Caching von Daten um Reaktionszeiten zu verkürzen
-4.4 Benutzerhandbuch (10%)
-Muss-Ziele:
-/M4/001 Schriftliches Benutzerhandbuch
-Kann-Ziele:
-/K4/001 Video-Anleitung für Benutzer
 
+\subsection{Vorprojekt (30\% des Gesamtprojekt)}
+
+\subsubsection*{Muss-Ziele}
+
+\begin{description}
+\item[/M1/001] Entwicklung eines graphischen Modells für SPARQL-Anfragen
+\item[/M1/002] Beispielhafte Umsetzung ausgewählter SPARQL-Anfragen mit AngularJS
+\end{description}
+
+\subsection{Graphische Umsetzung (40\%)}
+
+\subsubsection*{Muss-Ziele}
+
+\begin{description}
+\item[/M2/001] Umsetzung notwendiger SPARQL-Anfragen
+\end{description}
+
+Kann-Ziele:
+\begin{description}
+\item[/K2/001] Umsetzung nicht geforderter SPARQL-Anfragen
+\item[/K2/002] Modulare Entwicklung um Erweiterbarkeit sicherzustellen
+\item[/K3/003] Speichern von Anfragen / Beispielanfragen
+\item[/K3/004] i18n
+\end{description}
+
+\subsection{Endpoint-Anbindung (20\%)}
+
+\subsubsection*{Muss-Ziele}
+
+\begin{description}
+\item[/M3/001] Anbindung über Konfigurationsdateien
+\item[/M3/002] Beispielhafte Anbindung des GSB an dbpedia Endpoint 
+\end{description}
+
+\subsubsection*{Kann-Ziele}
+
+\begin{description}
+\item[/K3/001] Anbindung an mehrere Endpoints
+\item[/K3/002] Caching von Daten um Reaktionszeiten zu verkürzen
+\end{description}
+
+\subsection{Benutzerhandbuch (10\%)}
+ 
+\subsubsection*{Muss-Ziele}
+
+\begin{description}
+\item[/M4/001] Schriftliches Benutzerhandbuch
+\end{description}
+
+\subsubsection*{Kann-Ziele}
+
+\begin{description}
+\item[/K4/001] Video-Anleitung für Benutzer
+\end{description}
 
 \section{Qualitätssicherung}
 
