@@ -1,13 +1,14 @@
 \section{Einleitung}
-Eine der wichtigsten Leistungen des Wide Web ist sicherlich das
+Eine der wichtigsten Leistungen des World~Wide~Web ist sicherlich das
 Angebot immenser Mengen frei zugänglichen Wissens.
 Ein Teil dieses Wissens liegt dabei in einer Vielzahl von Datenbanken,
 welche dem Semantic Web zugeordnet sind.
+
 Dieses Konzept steht für die Bereitstellung von Daten auf eine
 maschinell verarbeitbare Weise, wodurch Suchanfragen, Austausch und
 Verknüpfungen von Daten, sowie strukturierte Erzeugung und Verwertung
 von Metadaten möglich werden.
-World 
+
 Für die Suche in solchen RDF-basierten Datenbanken stellt SPARQL als Anfragesprache ein mächtiges Werkzeug dar -- für den eingelernten Nutzer. Dieses Projekt verfolgt als Ziel die Entwicklung eines Graphical-SPARQL-Builders (GSB) und spricht im Vergleich dazu vor allem diejenigen an, denen es an Erfahrungswerten in Bereichen der SPARQL-Syntax bzw. RDF-Graphen allgemein mangelt.
 
 \section{Zielbestimmung}
@@ -20,7 +21,12 @@ SPARQL-Syntax. Dies soll die Formulierung komplexer Anfragemuster ohne
 aufwendige Einarbeitung ermöglichen.
 
 \section{Voraussetzungen}
-Ursprünglich ging dem GSB kein Projekt voraus, somit muss es komplett neu entwickelt werden. Seit dem Projektangebot haben wir im Vorprojekt einen Prototypen des GSB geschaffen, welcher nun die Basis für das endgültige Produkt stellt.
+Ursprünglich ging dem GSB kein Projekt voraus, somit muss es komplett
+neu entwickelt werden.
+Seit dem Projektangebot haben wir im Vorprojekt einen Prototypen des
+GSB geschaffen, welcher nun die Basis für das endgültige Produkt
+stellt.
+
 Als technische Voraussetzungen für den GSB ist die Verfügbarkeit eines
 realen SPARQL-Endpoints von Nöten, um die Anwendung ausgiebig testen
 zu können. Hier bei hoffen wir, dass wir auf die Daten und Ontologien
@@ -28,30 +34,61 @@ des ERM Projects~\cite{aksw} beziehungsweise
 Auszügen derselbigen zugreifen können, da diese eine hohe Qualität
 aufweisen. Falls wir diesen Zugang nicht rechtzeitig erhalten, werden
 wir auf die dbpedia (siehe~\cite{dbpedia}) zurückgreifen.
+
 Bei der Entwicklung werden wir weiter HTML und JavaScript zusammen mit
 dem AngularJS-Framework benutzen.
 
 \section{Designübersicht und Funktionalität}
-
+%\Hack{\enlargethispage{2\baselineskip}}
 \subsection*{Design}
 
 Das Design basiert abgesehen von den im Folgenden beschriebenen
 Abweichungen auf dem Design des Vorprojekts. Dieses kann in der
 Onlineversion des Vorprojekts betrachtet werden (\url{http://pcai042.informatik.uni-leipzig.de/~swp14-gsb/}).
-Zusätzlich werden die Subject-Boxen durch Drag\,\&\,Drop verschiebbar sein. Verbindungen zwischen Subjects können wie im Vorprojekt durch Properties angegeben werden und werden im Hauptprojekt durch Linien zwischen den jeweiligen Subjects gekennzeichnet.
+Zusätzlich werden die Subject-Boxen durch Drag\,\&\,Drop verschiebbar
+sein.
+
+Verbindungen zwischen Subjects können wie im Vorprojekt durch
+Properties angegeben werden und werden im Hauptprojekt durch Linien
+zwischen den jeweiligen Subjects gekennzeichnet.
+
 Durch Buttons in einer ein- und ausblendbaren Leiste in den
 Subject-Boxen werden die Properties um arithmetische Operatoren
 (\verb-+-, \verb+-+, \verb+*+, \verb+/+, \verb+COUNT+, \verb+MAX+, \verb+MIN+, \verb+SUM+)
 erweitert.
 
 \subsection*{Funktionalität}
-Die Hauptfunktionalität des GSB liegt in der Generierung semantisch und syntaktisch korrekter SPARQL-Anfragen aus einer grafischen Repräsentation der Anfrage. Der User muss den grafischen Input leisten und erhält vom GSB dafür verschiedene Werkzeuge:
-Das Tool ist in der Lage aus RDF-basierten Datenbanken Klassen und ihre Eigenschaften herauszufiltern und sie dem User zur Verfügung zu stellen. Hierbei kann der User eine Volltextsuche auf den Daten nutzen. Der GSB stellt zudem eine Vielfalt an klickbaren Lösungen für Sprachelemente aus SPARQL und für Arbeitshilfen bereit. Exemplarisch dafür stehen folgende Funktionalitäten: Ergebnisspalten können zum Beispiel mit einem Augensymbol ein- und ausgeblendet werden. Zu jeder Klasse und jeder Eigenschaft kann außerdem ein Beschreibungstext über ein Informationssymbol angezeigt werden. Grafische Elemente können über ein intuitives Mülleimersymbol wieder gelöscht werden.
-Um ein langfristig produktives Arbeiten mit dem GSB zu gewährleisten, ist eine Speicherfunktion implementiert, mit welcher User ihre grafisch zusammengestellten Anfragen im JSON-Format abspeichern und später wieder im GSB laden können. 
+Die Hauptfunktionalität des GSB liegt in der Generierung semantisch
+und syntaktisch korrekter SPARQL-Anfragen aus einer grafischen
+Repräsentation der Anfrage. Der User muss den grafischen Input leisten
+und erhält vom GSB dafür verschiedene Werkzeuge
+\begin{itemize}
+\item Das Tool ist in der Lage aus RDF-basierten Datenbanken Klassen
+  und ihre Eigenschaften herauszufiltern und sie dem User zur
+  Verfügung zu stellen. Hierbei kann der User eine Volltextsuche auf
+  den Daten nutzen. 
+\item Der GSB stellt zudem eine Vielfalt an klickbaren Lösungen für
+  Sprachelemente aus SPARQL und für Arbeitshilfen bereit. Exemplarisch
+  dafür stehen folgende Funktionalitäten
+  \begin{itemize}
+  \item Ergebnisspalten können zum Beispiel mit einem Augensymbol ein-
+    und ausgeblendet werden.
+  \item Zu jeder Klasse und jeder Eigenschaft kann außerdem ein
+    Beschreibungstext über ein Informationssymbol angezeigt werden.
+  \item Grafische Elemente können über ein intuitives Mülleimersymbol
+    wieder gelöscht werden.
+  \end{itemize}
+\item 
+Um ein langfristig produktives Arbeiten mit dem GSB zu gewährleisten,
+ist eine Speicherfunktion implementiert, mit welcher User ihre
+grafisch zusammengestellten Anfragen im JSON-Format abspeichern und
+später wieder im GSB laden können.
+\end{itemize}
 Der GSB verfügt über Möglichkeiten der Individualisierung über eine Konfigurationsdatei, mit der Einstellungen zur Sprachwahl, Einschränkungen der bereitgestellten Datenbank, Expertenansicht und zahlreiche GUI-Anpassungen vorgenommen werden können. Für die Konfiguration sollte ein Administrator verantwortlich sein.
 Der GSB ist so konstruiert, dass er als Single-Page-Anwendung einfach
 in bestehende Websites eingegliedert werden kann.
 
+%\Hack{\pagebreak}
 
 \section{Arbeitspakete und Meilensteine}
 
@@ -110,8 +147,10 @@ in bestehende Websites eingegliedert werden kann.
 \item[/K4/001] Video-Anleitung für Benutzer
 \end{description}
 
-\section{Qualitätssicherung}
+%\Hack{\pagebreak}
 
+\section{Qualitätssicherung}
+\Hack{\enlargethispage{4\baselineskip}}
 Für eine ausführliche Erläuterung der Einzelpunkte sei an dieser Stelle auf das Projektangebot, Abschnitt Qualitätssicherung, verwiesen.
 \begin{table}[!h]
   \sffamily
