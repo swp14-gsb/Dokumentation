@@ -1,20 +1,33 @@
-
 \section{Einleitung}
-Eine der wichtigsten Leistungen des Wide Web ist sicherlich das Angebot immenser Mengen frei zugänglichen Wissens. Ein Teil dieses Wissens liegt dabei in einer Vielzahl von Datenbanken, welche dem Semantic Web zugeordnet sind. Dieses Konzept steht für die Bereitstellung von Daten auf eine maschinell verarbeitbare Weise, wodurch Suchanfragen, Austausch und Verknüpfungen von Daten, sowie strukturierte Erzeugung und Verwertung von Metadaten möglich werden.World 
-Für die Suche in solchen RDF-basierten Datenbanken stellt SPARQL als Anfragesprache ein mächtiges Werkzeug dar - für den eingelernten Nutzer. Dieses Projekt verfolgt als Ziel die Entwicklung eines Graphical-SPARQL-Builders (GSB) und spricht im Vergleich dazu vor allem diejenigen an, denen es an Erfahrungswerten in Bereichen der SPARQL-Syntax bzw. RDF-Graphen allgemein mangelt.
+Eine der wichtigsten Leistungen des Wide Web ist sicherlich das
+Angebot immenser Mengen frei zugänglichen Wissens.
+Ein Teil dieses Wissens liegt dabei in einer Vielzahl von Datenbanken,
+welche dem Semantic Web zugeordnet sind.
+Dieses Konzept steht für die Bereitstellung von Daten auf eine
+maschinell verarbeitbare Weise, wodurch Suchanfragen, Austausch und
+Verknüpfungen von Daten, sowie strukturierte Erzeugung und Verwertung
+von Metadaten möglich werden.
+World 
+Für die Suche in solchen RDF-basierten Datenbanken stellt SPARQL als Anfragesprache ein mächtiges Werkzeug dar -- für den eingelernten Nutzer. Dieses Projekt verfolgt als Ziel die Entwicklung eines Graphical-SPARQL-Builders (GSB) und spricht im Vergleich dazu vor allem diejenigen an, denen es an Erfahrungswerten in Bereichen der SPARQL-Syntax bzw. RDF-Graphen allgemein mangelt.
 
 \section{Zielbestimmung}
 Der GSB als Webanwendung soll eine eingängige Benutzeroberfläche
 bereitstellen, welche die Erstellung von Anfragen an SPARQL-Endpunkte
 ermöglicht. Diese Anfragen sollen mithilfe graphischer Elemente und
-intuitiver Werkzeuge schrittweise aufgebaut werden können -
+intuitiver Werkzeuge schrittweise aufgebaut werden können --
 weitestgehend abstrahiert von der darunterliegenden
 SPARQL-Syntax. Dies soll die Formulierung komplexer Anfragemuster ohne
 aufwendige Einarbeitung ermöglichen.
 
 \section{Voraussetzungen}
 Ursprünglich ging dem GSB kein Projekt voraus, somit muss es komplett neu entwickelt werden. Seit dem Projektangebot haben wir im Vorprojekt einen Prototypen des GSB geschaffen, welcher nun die Basis für das endgültige Produkt stellt.
-Als technische Voraussetzungen für den GSB ist die Verfügbarkeit eines realen SPARQL-Endpoints von Nöten, um die Anwendung ausgiebig testen zu können. Hier bei hoffen wir, dass wir auf die Daten und Ontologien des ERM Projects [http://aksw.org/Projects/ERM.html] beziehungsweise Auszügen derselbigen zugreifen können, da diese eine hohe Qualität aufweisen. Falls wir diesen Zugang nicht rechtzeitig erhalten, werden wir auf die dbpedia [http://dbpedia.org/] zurückgreifen.
+Als technische Voraussetzungen für den GSB ist die Verfügbarkeit eines
+realen SPARQL-Endpoints von Nöten, um die Anwendung ausgiebig testen
+zu können. Hier bei hoffen wir, dass wir auf die Daten und Ontologien
+des ERM Projects~\cite{aksw} beziehungsweise
+Auszügen derselbigen zugreifen können, da diese eine hohe Qualität
+aufweisen. Falls wir diesen Zugang nicht rechtzeitig erhalten, werden
+wir auf die dbpedia (siehe~\cite{dbpedia}) zurückgreifen.
 Bei der Entwicklung werden wir weiter HTML und JavaScript zusammen mit
 dem AngularJS-Framework benutzen.
 
@@ -26,7 +39,10 @@ Das Design basiert abgesehen von den im Folgenden beschriebenen
 Abweichungen auf dem Design des Vorprojekts. Dieses kann in der
 Onlineversion des Vorprojekts betrachtet werden (\url{http://pcai042.informatik.uni-leipzig.de/~swp14-gsb/}).
 Zusätzlich werden die Subject-Boxen durch Drag\,\&\,Drop verschiebbar sein. Verbindungen zwischen Subjects können wie im Vorprojekt durch Properties angegeben werden und werden im Hauptprojekt durch Linien zwischen den jeweiligen Subjects gekennzeichnet.
-Durch Buttons in einer ein- und ausblendbaren Leiste in den Subject-Boxen werden die Properties um arithmetische Operatoren (+, -, *, /, COUNT, MAX, MIN, SUM) erweitert.
+Durch Buttons in einer ein- und ausblendbaren Leiste in den
+Subject-Boxen werden die Properties um arithmetische Operatoren
+(\verb-+-, \verb+-+, \verb+*+, \verb+/+, \verb+COUNT+, \verb+MAX+, \verb+MIN+, \verb+SUM+)
+erweitert.
 
 \subsection*{Funktionalität}
 Die Hauptfunktionalität des GSB liegt in der Generierung semantisch und syntaktisch korrekter SPARQL-Anfragen aus einer grafischen Repräsentation der Anfrage. Der User muss den grafischen Input leisten und erhält vom GSB dafür verschiedene Werkzeuge:
@@ -39,7 +55,7 @@ in bestehende Websites eingegliedert werden kann.
 
 \section{Arbeitspakete und Meilensteine}
 
-\subsection{Vorprojekt (30\% des Gesamtprojekt)}
+\subsection*{Vorprojekt (30\% des Gesamtprojekt)}
 
 \subsubsection*{Muss-Ziele}
 
@@ -48,7 +64,7 @@ in bestehende Websites eingegliedert werden kann.
 \item[/M1/002] Beispielhafte Umsetzung ausgewählter SPARQL-Anfragen mit AngularJS
 \end{description}
 
-\subsection{Graphische Umsetzung (40\%)}
+\subsection*{Graphische Umsetzung (40\%)}
 
 \subsubsection*{Muss-Ziele}
 
@@ -56,7 +72,7 @@ in bestehende Websites eingegliedert werden kann.
 \item[/M2/001] Umsetzung notwendiger SPARQL-Anfragen
 \end{description}
 
-Kann-Ziele:
+\subsubsection*{Kann-Ziele}
 \begin{description}
 \item[/K2/001] Umsetzung nicht geforderter SPARQL-Anfragen
 \item[/K2/002] Modulare Entwicklung um Erweiterbarkeit sicherzustellen
@@ -64,7 +80,7 @@ Kann-Ziele:
 \item[/K3/004] i18n
 \end{description}
 
-\subsection{Endpoint-Anbindung (20\%)}
+\subsection*{Endpoint-Anbindung (20\%)}
 
 \subsubsection*{Muss-Ziele}
 
@@ -80,7 +96,7 @@ Kann-Ziele:
 \item[/K3/002] Caching von Daten um Reaktionszeiten zu verkürzen
 \end{description}
 
-\subsection{Benutzerhandbuch (10\%)}
+\subsection*{Benutzerhandbuch (10\%)}
  
 \subsubsection*{Muss-Ziele}
 
@@ -96,9 +112,10 @@ Kann-Ziele:
 
 \section{Qualitätssicherung}
 
+Für eine ausführliche Erläuterung der Einzelpunkte sei an dieser Stelle auf das Projektangebot, Abschnitt Qualitätssicherung, verwiesen.
 \begin{table}[!h]
   \sffamily
-  \begin{tabular}{l l l l l}
+  \begin{tabular}{l c c c c}
     \toprule
     \textbf{Produktqualität} & \textbf{sehr gut} & \textbf{gut} & \textbf{normal} & \textbf{nicht relevant} \\\midrule
 
@@ -111,8 +128,6 @@ Kann-Ziele:
     \bottomrule
   \end{tabular}
 \end{table}
-
-Für eine ausführliche Erläuterung der Einzelpunkte sei an dieser Stelle auf das Projektangebot, Abschnitt Qualitätssicherung, verwiesen.
 
 
 %%% Local Variables: 
