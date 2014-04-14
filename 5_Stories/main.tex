@@ -10,6 +10,31 @@
 % \usepackage{showframe}
 \usepackage{../swtprak}
 
+\newcounter{bundleCtr}
+\newcounter{releaseCtr}
+
+\newcommand\release[3]{%
+\vskip15pt%
+\bgroup
+\sffamily\selectfont\bfseries\Large%
+\noindent/R\arabic{bundleCtr}/\stepcounter{releaseCtr}\arabic{releaseCtr}\enskip#1\par\vskip1pt
+\large%
+\noindent%
+Verantwortlich: #2\\\noindent% 
+Aufwandsschätzung: #3\,h\\\noindent%
+\egroup%
+\vrule width.4\textwidth height6pt depth-4pt\\\noindent%
+}
+\newenvironment{bundle}[1]{%
+  \setcounter{releaseCtr}{0}%
+  \stepcounter{bundleCtr}%
+  \bgroup
+  \sffamily\selectfont\bfseries\huge%
+  \noindent Releasebundle zum #1 \par\vskip-5pt%
+  \egroup% 
+}{%
+\vskip28pt%
+}
 
 \begin{document}
 
