@@ -7,35 +7,44 @@
 \usepackage[ngerman]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
+\usepackage{ifthen}
 % \usepackage{showframe}
 \usepackage{../swtprak}
 
-\newcounter{bundleCtr}
-\newcounter{releaseCtr}
+\newcommand\fnurl[2]{%
+  \href{#2}{#1}\footnote{\url{#2}}%
+}
 
-\newcommand\release[3]{%
+\newcounter{releaseCtr}
+\newcounter{storyCtr}
+
+\newcommand{\storyNUM}{\arabic{storyCtr}}
+
+\newcommand\story[4]{%
+\ifthenelse{\equal{#4}{}}{}{\renewcommand{\storyNUM}{#4}}
 \vskip15pt%
+\addcontentsline{toc}{subsection}{\protect/R\arabic{releaseCtr}/\storyNUM\enskip#1}%
 \bgroup
 \sffamily\selectfont\bfseries\Large%
-\noindent/R\arabic{bundleCtr}/\stepcounter{releaseCtr}\arabic{releaseCtr}\enskip#1\par\vskip1pt
+\noindent/R\arabic{releaseCtr}/\stepcounter{storyCtr}\storyNUM\enskip#1\par\vskip1pt
 \large%
 \noindent%
 Verantwortlich: #2\\\noindent% 
 Aufwandsschätzung: #3\,h\\\noindent%
 \egroup%
-\addcontentsline{toc}{subsection}{\protect/R\arabic{bundleCtr}/\arabic{releaseCtr}\enskip#1}%
 \vrule width.4\textwidth height6pt depth-4pt\\\noindent%
 }
-\newenvironment{bundle}[1]{%
-  \setcounter{releaseCtr}{0}%
-  \stepcounter{bundleCtr}%
-  \addcontentsline{toc}{section}{Releasebundle R\arabic{bundleCtr} zum #1}
+\newenvironment{release}[1]{%
+  \setcounter{storyCtr}{0}%
+  \stepcounter{releaseCtr}%
+  \phantomsection
+   \addcontentsline{toc}{section}{Releasebundle R\arabic{releaseCtr} zum #1}
   \bgroup
   \sffamily\selectfont\bfseries\huge%
-  \noindent Releasebundle R\arabic{bundleCtr} zum #1 \par\vskip-5pt%
+  \noindent Releasebundle R\arabic{releaseCtr} zum #1 \par\vskip5pt%
   \egroup%
 }{%
-\vskip28pt%
+\pagebreak
 }
 
 \begin{document}
