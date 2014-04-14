@@ -28,11 +28,11 @@ Aufwandsschätzung: #3\,h\\\noindent%
 \newenvironment{bundle}[1]{%
   \setcounter{releaseCtr}{0}%
   \stepcounter{bundleCtr}%
+  \addcontentsline{toc}{section}{Releasebundle R\arabic{bundleCtr} zum #1}
   \bgroup
   \sffamily\selectfont\bfseries\huge%
   \noindent Releasebundle R\arabic{bundleCtr} zum #1 \par\vskip-5pt%
   \egroup%
-  \addcontentsline{toc}{section}{Releasebundle R\arabic{bundleCtr} zum #1}
 }{%
 \vskip28pt%
 }
