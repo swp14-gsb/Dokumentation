@@ -57,7 +57,7 @@ Komponente Workspace weitergeleitet und dort gegebenenfalls an die
 Komponenten Subjects und deren Unterkomponente Properties
 weitergeleitet. Um dies zu verdeutlichen, hier drei Beispiele:
 \begin{enumerate}
-\item Der Nutzer setzt eine Übersetzung eines GSBL-Wortes in Gang, dies betrifft die Komponente “Workspace”
+\item Der Nutzer setzt eine Übersetzung eines GSBL-Wortes in Gang, dies betrifft die Komponente \glqq Workspace\glqq
 \item Der Nutzer ändert den Alias eines Subjekts, dies würde über die Workspace-Komponente zu der Subjects-Komponente weitergereicht werden.
 \item Der Nutzer ändert die Sichtbarkeit einer Eigenschaft, dies würde über die Workspace-Komponente zu der Subjects-Komponente zum Ziel, der Properties-Komponente, weitergereicht werden.
 \end{enumerate}
@@ -75,7 +75,7 @@ Ebenso gibt es eine Verbindung zur Endpoint-Connector-Komponente, die die Kommun
 
 Bei der Hauptversion des Projekts besteht das Userinterface aus dem
 Workspace, der die graphisch konstruierte Abfrage beinhaltet, dem Feld
-in dem nach dem Drücken des "Build Query"-Buttons die Übersetzung der
+in dem nach dem Drücken des \glqq Build Query\grqq -Buttons die Übersetzung der
 Anfrage in JSON und in SPARQL zu sehen ist.
 Im Workspace befindet sich der Hinzufüge-Button für Subjekte sowie ein LIST ALL Objekt.
 Ein weiterer Button ermöglicht das Speichern der Anfrage im
@@ -98,7 +98,7 @@ Subjects können durch die Icons entfernt (Papierkorb), in der Anfrage
 aus-/eingeblendet (Auge) und hinzugefügt (Plus-Symbol) werden. Die
 Properties eines Subjects sind ausblendbar.
 
-Subjects sind Instanzen die mit den jeweiligen "extern"-Properties
+Subjects sind Instanzen die mit den jeweiligen \glqq extern\grqq -Properties
 Verbindungen untereinander aufbauen und Subject-interne Properties
 sammeln. Miteinander verknüpfte Subjects sind durch Linien
 verbunden. Subjects können durch Drag\,\&\,Drop auf dem Workspace
@@ -119,7 +119,7 @@ zusammengestellten graphischen Anfrage (in GSBL) eine Abfrage im
 JSON-Format und eine weitere Übersetzung von JSON in SPARQL wird
 danach durchgeführt.
 
-Die Translation wird durch Klick auf den Button "Build Query" gestartet und das Ergebnis wird in den unteren Feldern (JSON- und SPARQL-Resultat) angezeigt.
+Die Translation wird durch Klick auf den Button \glqq Build Query\grqq gestartet und das Ergebnis wird in den unteren Feldern (JSON- und SPARQL-Resultat) angezeigt.
 Algorithmisch betrachtet beginnt die Übersetzung bei dem mit dem
 Startpunkt verknüpften Subject und übersetzt dann rekursiv alle damit
 verknüpften Subjects und deren Properties, sodass nicht verknüpfte
@@ -151,7 +151,7 @@ Eigenschaften sind die Attribute von Ressourcen. Im Datenmodell legen sie die er
 
 \subsection*{Aussage}
 
-Eine Ressource, kombiniert mit ihrer Eigenschaft und den Wert, den die Eigenschaft dieser Ressource hat, nennt man "Aussage". D.h. eine Aussage besteht aus Subjekt-Prädikat-Objekt (Ressource-Eigenschaft-Wert).
+Eine Ressource, kombiniert mit ihrer Eigenschaft und den Wert, den die Eigenschaft dieser Ressource hat, nennt man \glqq Aussage\grqq. D.h. eine Aussage besteht aus Subjekt-Prädikat-Objekt (Ressource-Eigenschaft-Wert).
 
 \Hack{\pagebreak}
 
@@ -168,7 +168,7 @@ Eine Ressource, kombiniert mit ihrer Eigenschaft und den Wert, den die Eigenscha
 Aussage  & Der Autor der Ressource ist Herbert Meier \\\midrule
 Subjekt  & \url{http://www.example.org/Herbert-Meier} \\
 Prädikat & Autor \\
-Objekt   & "Herbert Meier" \\\bottomrule
+Objekt   & \glqq Herbert Meier\grqq \\\bottomrule
 \end{tabular}
 \end{SCtable}
 
@@ -197,7 +197,7 @@ Die Vorlage für ein solches JSON-Objekt befindet sich in Anhang~\ref{json}.
 \section{Testkonzept}
 
 Für die Qualitätssicherung dieses Projekt werden zunächst einzelne
-Komponenten auf ihre 'interne Qualität' hin getestet, und schließlich
+Komponenten auf ihre \glqq interne Qualität\glqq hin getestet, und schließlich
 die Zusammenführung dieser. Für Komponenten- bzw Integrationstests
 bietet das für den GSB genutzte Framework AngularJS dabei bereits
 eigene, potente Werkzeuge an~\cite{ajsut}. Diese erlauben losgelößte Tests
@@ -224,7 +224,7 @@ sind denkbar.
 Im Besonderen betrifft dies die Mitarbeiter der Bibliotheca Albertina,
 welche als mögliche Abnehmer des GSB bereits feststehen. Deren
 Rückmeldungen sollen insofern stark gewichtet werden, da sie besonders
-“praxisnahe” Probleme aufzeigen und Verbesserungsvorschläge liefern
+\glqq praxisnahe\glqq Probleme aufzeigen und Verbesserungsvorschläge liefern
 könnten. Zu diesem Zweck ist auch ein regelmäßiges Treffen geplant.
 
 
