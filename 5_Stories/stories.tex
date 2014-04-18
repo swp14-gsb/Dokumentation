@@ -1,9 +1,10 @@
 Dies ist die erste Version der Storyplanung, diese wird sich wahrscheinlich im Laufe der Zeit zumindest teilweise ändern. Intern arbeiten wir mit Github Issues, welche für das Projekt auf der \fnurl{Github Issues Seite}{https://github.com/swp14-gsb/gsb/issues} zu finden sind und eher den aktuellen Entwicklungsstand darstellen.
 
 \begin{release}{22.04.2014}
-Christoph steht aufgrund Urlaubs nicht für dieses Releasebündels zur Verfügung.
+Christoph steht aufgrund Urlaubs nicht für dieses Releasebündels zur Verfügung.\\
+Das erste Releasebundle steht ganz im Licht der Strukturierung des Projekts. Es geht um Umstrukturierung auf der Codeebene, welche die zukünftige Arbeit erleichtert. Des Weiteren wird es größere Layoutänderungen geben, eine Dreiteilung in einen Workspace, in dem der Benutzer seine Anfrage zusammenstellt, einem Querybereich, in dem man die erstellten JSON- \& SPARQL-Repräsentationen der Anfrage ansehen kann, sowie einem Resultatbereich, in dem die Ergebnisse der Anfrage angezeigt werden.
 
-\story{Auftrennen der Controllerlogik}{Niemand}{4}{}%
+\story{Auftrennen der Controllerlogik}{Nico \& Lukas}{4}{}%
 Es geht beim Auftrennen der Controllerlogik darum, sich Gedanken zu machen, inwiefern ein Aufbrechen der Bestehenden Controller Sinn ergibt und wie dieses geschehen kann, um die zukünftige Arbeit zu erleichtern. Zu diesem Zeitpunkt scheinen folgende verschachtelte Controller (von Außen nach Innen) sinnvoll:
 \begin{enumerate}
 \item \textbf{App:} Kontrolliert die Anwendung, hier werden allgemeine Einstellungen vorgenommen und Dinge wie eine die Übersetzungen von GSBL zu JSON / JSON zu SPARQL in Gang gesetzt
@@ -13,8 +14,9 @@ Es geht beim Auftrennen der Controllerlogik darum, sich Gedanken zu machen, inwi
 \item\textbf{PropertyInstance:} Eine Individuelle Eigenschaft, eventuell noch aufspaltbar (oder zusätzliche Ebene), um Datentypeigenschaften und Objekteigenschaften zu unterscheiden
 \end{enumerate}
 
-\Hack{\enlargethispage{2.5\baselineskip}}
-\story{availableClassService zum endpointService erweitern}{Niemand}{2}{}%
+\pagebreak
+
+\story{availableClassService zum endpointService erweitern}{Siggi \& Christoph}{2}{}%
 Einen Service Schaffen, der mehrere Funktionen hat, um Metadaten aus dem Endpoint auszulesen, wie zum Beispiel:
 \begin{itemize}
 \item getAvailableClasses()
@@ -22,14 +24,14 @@ Einen Service Schaffen, der mehrere Funktionen hat, um Metadaten aus dem Endpoin
 \item getInverseProperties(uri)
 \end{itemize}
 
-\story{Übersetzungsfunktion als eigener Service }{Niemand}{3}{}%
+\story{Übersetzungsfunktion als eigener Service }{Nick \& Felix}{3}{}%
 Analog zum endpointService sollte ein translationService geschaffen werden, der die Übersetzung zu JSON und zu SPARQL bereitstellt, mit Funktionen wie:
 \begin{itemize}
 \item translateToJSON(gsbl)
 \item translateToSPARQL(json)
 \end{itemize}
 
-\story{Drei-Schritte-Layout \& Draggable}{Niemand}{2}{}%
+\story{Drei-Schritte-Layout \& Draggable}{Lukas}{2}{}%
 Mergen des bereits existierenden Draggable-Branches in den Master. Des weiteren Umsetzung eines Dreigeteilten Layouts, zum Beispiel durch Tabs, in dem jeder Tab einen logischen Schritt des Workflows des GSB entspricht:
 \begin{enumerate}
 \item Workspace: Erstellung des GSBL-Wortes
@@ -40,61 +42,69 @@ Mergen des bereits existierenden Draggable-Branches in den Master. Des weiteren 
 
 
 \begin{release}{28.04.2014}
-Christoph steht aufgrund Urlaubs nicht für dieses Releasebündels zur Verfügung.
+Christoph steht aufgrund Urlaubs nicht für dieses Releasebündels zur Verfügung.\\
+Im zweiten Releasebundle wird der Endpunkt angebunden. Desweiteren können Inverse Objekteigenschaften (z.B. \glqq Stadt ist Wohnort von\grqq) hinzugefügt werden und Arithmetik und Vergleiche von Zahleigenschaften ist möglich.
 
-\story{Endpunktanbindung}{Niemand}{4}{}%
+\story{Endpunktanbindung}{Nico \& Felix}{4}{}%
 Anbinden eines Endpunkts in den endpointService (durch erstellen passender Konfigurationen) durch geeignete SPARQL-Queries, sodass auf echten Daten eines Endpunkts gesucht werden kann. Vorzugsweise sollte dies an einem \fnurl{ERM Endpunkt}{http://aksw.org/Projects/ERM.html}  geschehen. Falls dies nicht möglich ist, muss auf die \fnurl{dbpedia}{http://dbpedia.org} zurückgegriffen werden.\\
 \textbf{Achtung:} Es sollten auch die Eigenschaften der Überklassen ausgelesen werden (Stichwort: Hierarchien in Subjektklassen).
 
-\story{Objekteigenschaften: Inverse Beziehung}{Niemand}{4}{}%
+\story{Objekteigenschaften: Inverse Beziehung}{Christoph \& Siggi}{4}{}%
 Umsetzung der Inversen Beziehung (\textit{is of}).\\
 Also zum Beispiel: \glqq Universität \textit{is} Studienort \textit{of} Person\grqq
 
-\story{Datentypeigenschaft: Zahlenwerte}{Niemand}{6}{}%
+\story{Datentypeigenschaft: Zahlenwerte}{Lukas \& Nick}{6}{}%
 Arithmetik, Vergleiche und Übersetzung zu SPARQL von\\
 \textit{xsd:integer}, \textit{xsd:decimal}, \textit{xsd:float} und \textit{xsd:double}.
 
-\story{Datentypeigenschaft: Strings}{Niemand}{6}{}%
-Vergleiche (equals, contains, starts|endsWith,  Regex) und Langparameter von \textit{xsd:string}, sowie Übersetzung zu SPARQL
+
 \end{release}
 
 
 \begin{release}{05.05.2014}
+Im dritten Releasebundle wird die Möglichkeit geschaffen, Eigenschaften als optional zu markieren. Des weiteren wird man Vergleiche auf String-Eigenschaften ausführen können und es wird ein \glqq Anonymes Subjekt\grqq hinzugefügt, mit dem man nach Dingen Suchen kann, deren  Klasse man nicht kennt, die eine Bestimmte Eigenschaft haben.
 
-\story{Datentypeigenschaft: Daten \& Uhrzeiten}{Niemand}{6}{}%
-Vergleiche: Datums- (\textit{xsd:dateTime}, \textit{xsd:date}) und Zeiträume (\textit{xsd:time}), sowie Übersetzung zu SPARQL.
-
-\story{Optionale Properties}{Niemand}{3}{}%
+\story{Optionale Eigenschaften}{Felix \& Siggi}{3}{}%
 Möglichkeit schaffen eine Eigenschaft als optional zu deklarieren.
 
-\story{Sonderfall: Anonyme Klasse}{Niemand}{3}{}%
+\story{Sonderfall: Anonyme Klasse}{Nico \& Nick}{3}{}%
 Eine Subjektklasse, die \textit{owl:Thing} repräsentiert und mit der alle Eigenschaften der Ontologie durchsucht werden können.
 
-\story{Testcases 1}{Niemand}{4}{}%
-Tests für die bis zum Start des Releasebündel R3 fertigen Klassen. (Controller \& Services.)
-\end{release}
+\story{Datentypeigenschaft: Strings}{Lukas \& Christoph}{6}{}%
+Vergleiche (equals, contains, starts|endsWith,  Regex) und Langparameter von \textit{xsd:string}, sowie Übersetzung zu SPARQL
 
+\end{release}
 
 \begin{release}{12.05.2014}
 
-\story{JSON speichern \& Laden}{Niemand}{5}{}%
+Im vierten Relesebundle wird dem Nutzer das Speichern und Laden einer Abfrage ermöglicht. Es wird ein Benutzerhandbuch für die Administratoren und Endnutzer gefertigt, des Weiteren der Website eine Legende hinzugefügt, welche kurze Erklärungen liefert. Es wird auch möglich sein aggregierte Funktionen wie \glqq COUNT, SUM, MIN, MAX, AVG, GROUP\_ CONCAT \grqq auf Eigenschaften auszuführen.
+
+
+\story{JSON speichern \& Laden}{Nico \& Christoph}{5}{}%
 Speichern und Laden eines GSBL-Wortes im JSON-Formates.
 
-\story{Dokumentation Code-Ebene}{Niemand}{3}{}%
-Komplette Dokumentation auf Codeebene gemäß unseres Qualitätskonzepts.
+\story{Legende \& Benutzerhandbuch}{Siggi \& Nick}{4}{}%
+Erstellung einer Legende in der Oberfläche, Erstellung eines Benutzerhandbuchs für den Endnutzer in HTML. Handbuch für Administratoren im Markdown oder PDF-Format.
 
-\story{Legende \& Benutzerhandbuch}{Niemand}{4}{}%
-Erstellung einer Legende in der Oberfläche, Erstellung eines Benutzerhandbuchs in HTML.
+\story{Aggregierte Funktionen}{Lukas \& Felix}{4}{}%
+Die Aggregierenden SPARQL-Funktionen \glqq COUNT, SUM, MIN, MAX, AVG, GROUP\_ CONCAT \grqq sollen auf Eigenschaften anwendbar sein.
 
-\story{Testcases 2}{Niemand}{3}{}%
-Ggf. Anpassung Tests und neue Tests für die neu erstellten Klassen.
 \end{release}
-
 
 \begin{release}{19.05.2014}
 
-\story{Platzhalter}{Niemand}{??}{X}%
-Für die letzte Woche ist vor allem vorgesehen eventuelle Mängel, nicht geschafftes und Kannziele umzusetzen.
+Beim Finalen Release werden kleinere Pakete in Angriff genommen, um eventuell entstandene Verzögerungen und Bugs zu beheben zu können. Es werden UNIT-Testcases für alle Controller geschaffen, die Dokumentation auf Code-Ebene überarbeitet und die Möglichkeit Daten- \& Uhrzeiteigenschaften einzugrenzen.
+
+\story{Überarbeitung Dokumentation Code-Ebene}{Nick \& Christoph}{3}{}%
+Komplette Dokumentation auf Codeebene gemäß unseres Qualitätskonzepts.
+
+\story{Testcases }{Felix \& Lukas}{4}{}%
+Tests für die bis zum Start des Releasebündel R3 fertigen Klassen. (Controller \& Services.)
+
+\story{Datentypeigenschaft: Daten \& Uhrzeiten}{Nico \& Siggi}{6}{}%
+Vergleiche: Datums- (\textit{xsd:dateTime}, \textit{xsd:date}) und Zeiträume (\textit{xsd:time}), sowie Übersetzung zu SPARQL.
+
+
 \end{release}
 
 
