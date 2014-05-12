@@ -1,0 +1,117 @@
+\section{Einleitung}
+
+Dieses Handbuch richtet sich an Administratoren einer GSB-Instanz.
+Dieses Dokument befasst sich mit den möglichen bzw. notwendigen Modifikationen um um den GSB für einen bestimmten SPARQL-Endpoint zu konfigurieren.
+
+\section{config.js -- die Konfigurationsdatei des GSB}
+
+Die Konfiguration des GSB zur Anpassung an einen bestimmten
+SPARQL-Endpoint erfolgt in der Kondigurationsdatei unter
+\verb+/app/js/config.js+.
+Im Folgenden sind die Teile der Konfigurationsdatei aufgeführt, die
+durch Administratoren angepasst werden können.
+
+\subsection{propertyTypeURIs}
+
+Die Liste der \verb+propertyTypeURIs+ legt fest welche Typen von
+Eigenschaften dem Benutzer Angeboten werden.
+
+Diese könnte wie folgt aussehen:
+
+\begin{Verbatim}
+propertyTypeURIs : {
+  'OBJECT_PROPERTY' : [
+    /http:\/\/dbpedia.org\/ontology\//  // Teil-URI als regulärer Ausdruck
+  ],
+  'NUMBER_PROPERTY' : [
+    /http:\/\/www\.w3\.org\/2001\/XMLSchema#(integer|float|double)/,
+    'http://www.w3.org/2001/XMLSchema#decimal'      // Teil-URI als String
+  ],
+  'STRING_PROPERTY' : [
+    'http://www.w3.org/2001/XMLSchema#string',
+    'http://www.w3.org/2001/XMLSchema#literal'
+  ]
+},
+\end{Verbatim}
+Die Liste besteht aus Eigenschafts-Typen wie \verb+OBJECT_PROPERTY+
+oder \verb+NUMBER_PROPERTY+, die wiederum Listen von hinreichend
+langen Teil-URIs der jeweiligen Eigenschaftstypen darstellen.
+Diese Teil-URIs können einzeln als String oder durch einen Regulären
+Ausdruck angegeben werden.
+
+\subsubsection{OBJECT\_PROPERTY}
+
+Unter \verb+OBJECT_PROPERTY+ wird die URI der zu verwendenden
+Ontologie angegeben. Im Falle der dbPedia ist diese
+\url{http://http://dbpedia.org/ontology/}, eine Entität vom Typ
+\verb+Ontology+ (\url{http://www.w3.org/2002/07/owl#Ontology}).
+
+\subsubsection{NUMBER\_PROPERTY}
+
+Hier werden die URIs der Eigenschaftstypen aufgelistet, die eine
+Arithmetik erlauben.
+
+\subsubsection{STRING\_PROPERTY}
+
+Hier werden die URIs der Eigenschaftstypen aufgelistet, die
+String-Vergleiche erlauben.
+
+\subsection{URLs}
+
+\subsubsection{resultURL}
+
+Der Rumpf der URL über die die vom Nutzer erstellte SPARQL-Anfrage an
+den SPARQL-Endpoint gestellt wird, beispielsweise:
+
+{\small\url{http://dbpedia-live.openlinksw.com/sparql?default-graph-uri=http%3A%2F%2Fdbpedia.org&format=text%2Fhtml&timeout=5000&debug=on&query=}}\medskip
+
+Dabei ist
+\begin{itemize}
+\item \url{http://dbpedia-live.openlinksw.com/} die Adresse des Virtuoso-Endpoints
+\item \url{sparql?} der Indikator, das eine SPARQL-Anfrage folgt
+\item \url{default-graph-uri=http%3A%2F%2Fdbpedia.org} 
+die URI des default-Graphen
+\item \url{format=text%2Fhtml} 
+das Format der Antwort. Dieses sollte bei text/html belassen werden um
+eine für den Nutzer lesbare Form zu garantieren.
+\item \url{timeout=5000} Das Timeout in ms für die Ausführung der
+  Anfrage
+\item \url{query=} der Indikator, dass die eigentliche Anfrage
+  folgt. Dieser Teil \textbf{muss der letzte} der \verb+resultURL+ sein.
+\end{itemize}
+
+\subsubsection{queryURL}
+
+Der Rumpf der URL über die der GSB die verfügbaren Klassen und deren
+Eigenschaften beim SPARQL-Endpoint erfragt.
+Das Format ist größtenteils analog dem der \verb+resultURL+ \textbf{jedoch
+muss als Antwortformat json (\url{format=json}) angegeben werden}.
+
+\subsection{allowedLanguages}
+
+Voreinstellung: \verb#allowedLanguages : ['*','de','en','pl']#\smallskip
+
+\noindent Wird einem Subjekt eine String-Eigenschaft zugewiesen, so
+kann der Benutzer gewisse Anforderungen an diese Eigenschaft stellen.
+Eine dieser Anforderungen ist die Sprache des Eintrags.
+In dem Array der \verb#allowedLanguages# wird festgelegt, welche
+Wahlmöglichkeiten bezüglich der Sprache dem Benutzer angeboten
+werden. Die Einstellung \verb#allowedLanguages : ['en']# gibt dem
+Benutzer beispielsweise nur die Möglichkeit nach englischen
+String-Eigenschaften zu suchen.
+
+
+\subsection{standardLang}
+
+Voreinstellung: \verb#standardLang: 'en'#\smallskip
+
+\noindent Wenn der GSB die verfügbaren Eigenschaften zu einem Subjekt bei einem
+SPARQL-Endpoint anfragt lässt er sich ebenfalls den Kommentar
+(\verb+rdfs:comment+) sowie das Label (\verb+rdfs:label+) zu den
+jeweiligen Eigenschaften liefern, sofern diese in der als
+\verb#standardLang# festgelegten Sprache verfügbar sind.
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "main"
+%%% End: 
